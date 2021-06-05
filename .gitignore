@@ -1,7 +1,7 @@
 [Bb]uild/**/*
 [Bb]uilds/**/*
-!**/.gitkeep
 Temp/**/*
+!**/.gitkeep
 *.csproj
 *.sln
 .vs/
