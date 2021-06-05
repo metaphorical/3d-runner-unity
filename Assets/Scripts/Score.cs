@@ -5,9 +5,11 @@ public class Score : MonoBehaviour
 {
     public Transform player;
     public Text scoreText;
+    static float scoreNumber = 0;
 
     void Update()
     {
-        scoreText.text = (player.position.z + 45).ToString("0");
+        scoreNumber = scoreNumber + player.position.z + 45;
+        scoreText.text = (scoreNumber).ToString("0");
     }
 }
