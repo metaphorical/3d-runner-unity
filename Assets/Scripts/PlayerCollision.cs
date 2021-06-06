@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-     public PlayerMovement movement;
+    public PlayerMovement movement;
     
     void OnCollisionEnter (Collision collisionInfo)
     {
          if(collisionInfo.collider.tag == "Obsticle")
          {
              movement.enabled = false;
-             FindObjectOfType<GameManager>().EndGame();
+             FindObjectOfType<GameManager>().EndLife();
          }
     }
 }

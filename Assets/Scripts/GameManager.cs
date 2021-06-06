@@ -7,13 +7,21 @@ public class GameManager : MonoBehaviour
     public float RestartDelay = 2f;
     public GameObject CompleteLevelUI;
 
+    static int Lives = 3;
+
     // GAME OVER script
-    public void EndGame () 
+    public void EndLife () 
     {
         if(!GameHasEnded){
             GameHasEnded = true;
+            Lives--;
+            if(Lives!=0)
+            {
             // Invoke to delay by RestartDelay seconds
-            Invoke("Restart", RestartDelay);
+                Invoke("Restart", RestartDelay);
+            } else {
+                Debug.Log("GAME OVER");
+            }
         }
     }
     // Restarting current scene (level)
@@ -25,5 +33,10 @@ public class GameManager : MonoBehaviour
     public void CompleteLevel()
     {
         CompleteLevelUI.SetActive(true);
+    }
+    
+    public int GetLives()
+    {
+        return Lives;
     }
 }
