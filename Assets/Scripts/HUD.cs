@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour
+public class HUD : MonoBehaviour
 {
     public Transform player;
     public Text scoreText;
